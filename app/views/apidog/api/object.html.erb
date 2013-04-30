@@ -1,0 +1,40 @@
+<h1> <%= @object.name %></h1>
+
+<% @object.actions.each do |meth| %>
+
+	<article>
+		<h2> <%= meth.title %> </h2>
+		<p class="intro"> <%= meth.subtitle %> </p>
+				<div class="url"><span class="method GET">GET</span>
+  <%= @api.api_root %><%= meth.path %></div>
+		<p>
+			<%= meth.description.html_safe %>
+		</p>
+		
+
+
+		<div class="highlight">
+		
+		<% if meth.sample_request %>
+		<h3> Example </h3>
+
+		Sample Request		
+			<pre class="headers">
+				<code>
+					<%= meth.sample_request %>
+				</code>
+			</pre>
+		
+		Sample Response 
+			<pre>
+				<code class="bash">
+					<%= meth.sample_response %>
+				</code>
+			</pre>
+
+
+		</div>
+		<% end %>
+
+	</article>
+<% end %>

@@ -12,29 +12,53 @@
 		</p>
 		
 
-
 		<div class="highlight">
-		
-		<% if meth.sample_request %>
+
 		<h3> Example </h3>
 
-		Sample Request		
+<ul class="nav nav-tabs">
+  <li><a href="#xml" data-toggle="tab">XML</a></li>
+  <li><a href="#json" data-toggle="tab">JSON</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane active" id="xml">
+		Sample Request	
 			<pre class="headers">
 				<code>
-					<%= meth.sample_request %>
+					<%= meth.sample_request_xml %>
 				</code>
 			</pre>
 		
 		Sample Response 
 			<pre>
 				<code class="bash">
-					<%= meth.sample_response %>
+					<%= meth.sample_response_xml %>
 				</code>
 			</pre>
 
+  </div>
+  <div class="tab-pane" id="json">
+		Sample Request	
+			<pre class="headers">
+				<code>
+					<%= meth.sample_request_json %>
+				</code>
+			</pre>
+		
+		Sample Response 
+			<pre>
+				<code class="bash">
+					<%= meth.sample_response_json %>
+				</code>
+			</pre>
+  </div>
+</div>
+
+	
+
 
 		</div>
-		<% end %>
+
 
 	</article>
 <% end %>
